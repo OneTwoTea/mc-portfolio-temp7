@@ -1,0 +1,85 @@
+<!-- ĐÂY LÀ FILE KHUNG — Không sửa nội dung trực tiếp ở đây.
+     Nội dung lấy từ site.config.js, các khối {{{ @ten }}} do src/templates.js sinh ra.
+     {{ duong.dan }} = chèn giá trị (đã escape), {{{ @tenRenderer }}} = chèn HTML.
+     Giao diện "Bento Board": mọi khối trên trang là một ô (tile) trong lưới.
+     Build sẽ tự xóa comment này. -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  {{{ @seoHead }}}
+  <script>document.documentElement.classList.add("js")</script>
+  <!-- Google Fonts: Space Grotesk (tiêu đề, số) + Manrope (nội dung) — có tiếng Việt, display=swap, không chặn render -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Manrope:wght@400;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Manrope:wght@400;600&display=swap"></noscript>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  {{{ @skipLink }}}
+
+  <div class="page">
+    <!-- ═══ Ô ĐẦU TRANG: logo + tên + nút Mục lục ═══ -->
+    <header class="board">
+      <div class="tile topbar col-span-2 md:col-span-4 lg:col-span-12">
+        <a href="#hero" class="brand">
+          <img src="{{ brand.logo }}" alt="{{ brand.logoAlt }}" class="brand__logo" width="40" height="40">
+          <span class="brand__text">
+            <span class="brand__name">{{ brand.name }}</span>
+            <span class="brand__tag">{{ brand.tagline }}</span>
+          </span>
+        </a>
+        <div class="topbar__actions">
+          <a {{{ @ctaAttrs }}} class="pill pill--lime topbar__cta">{{ header.ctaButton.label }}</a>
+          {{{ @menuButton }}}
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- ═══ HERO: bảng ô (ảnh, tên, lịch trống, tiêu đề, đặt lịch, showreel, số liệu) ═══ -->
+      {{{ @heroSection }}}
+
+      <!-- ═══ CẢM NHẬN (đưa lên ngay sau hero) ═══ -->
+      {{{ @testimonialsSection }}}
+
+      <!-- ═══ DỊCH VỤ (ô lật) ═══ -->
+      {{{ @servicesSection }}}
+
+      <!-- ═══ GALLERY ═══ -->
+      {{{ @gallerySection }}}
+
+      <!-- ═══ VIDEO ═══ -->
+      {{{ @videosSection }}}
+
+      <!-- ═══ GIỚI THIỆU ═══ -->
+      {{{ @aboutSection }}}
+
+      <!-- ═══ ĐỐI TÁC ═══ -->
+      {{{ @partnersSection }}}
+
+      <!-- ═══ HỎI ĐÁP (khung chat) ═══ -->
+      {{{ @faqSection }}}
+
+      <!-- ═══ LIÊN HỆ ═══ -->
+      {{{ @contactSection }}}
+    </main>
+
+    <!-- ═══ FOOTER ═══ -->
+    {{{ @footerSection }}}
+  </div>
+
+  <!-- ═══ THANH TAB ĐÁY + NÚT NỔI ═══ -->
+  {{{ @tabBar }}}
+  {{{ @floatingButton }}}
+
+  <!-- ═══ BẢNG MỤC LỤC, TRÌNH PHÁT VIDEO, XEM ẢNH ═══ -->
+  {{{ @menuSheet }}}
+  {{{ @overlays }}}
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
